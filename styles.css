@@ -1,0 +1,211 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body {
+    margin: 0; 
+    display: flex;
+    justify-content: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-image: url();
+    background-size: cover;
+
+}
+.top-center {
+    top: 0;
+    position: absolute;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+
+.container p{
+
+    font-weight: 600;
+    font-size: 16px;
+   
+
+}
+
+
+.container input{
+
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+    outline: 0;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border-radius: 10px;
+}
+
+
+#imagebox{
+
+    width: 200px;
+    border-radius: 5px;
+    max-height: 0;
+    overflow:hidden;
+}
+#imagebox img{
+
+    width: 100%;
+    padding: 10px;
+}
+
+#imagebox.show-img{
+    max-height: 300px;
+    margin: 10px auto;
+    left: 45%;
+    border: 2px solid  black ;
+}
+
+#imagebox.show-img::before{
+
+    filter: blur(1.5rem);
+    opacity: 0.1;
+}
+
+.error{
+
+    animation: shake 0.1s linear 10;
+}
+@keyframes  shake{
+
+    0%{
+        transform: translate(0);
+    }
+
+    25%{
+        transform: translate(-2px);
+    }
+    50%{
+        transform: translate(0);
+    }
+    75%{
+        transform: translate(2px);
+    }
+    100%{
+        transform: translate(0);
+    }
+    
+}
+
+
+h1 {
+   
+    font-family:'Segoe UI';
+    font-weight: bold;
+    font-size: 33px;
+    color:black;
+    overflow: hidden;
+   
+    margin-top: 3%;
+    position: relative;
+    top: 0;
+
+  }
+h1::before{
+    content:'';
+    position:absolute;
+    width: 100%;
+    height:100%;
+    background:linear-gradient(90deg,transparent 0%, white 5%,white 100%);
+    animation: animate 10s linear forwards;
+    left: 90%;
+    top: 0;
+  }
+  @keyframes animate{ 
+    0% {
+       left: 0%;
+    }
+   
+    100% {
+        left: 530%;
+     }
+
+  }
+
+
+  @property --angle{
+    syntax:"<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes spin{
+
+    from{
+
+        --angle:0deg;
+    }
+
+    to{
+
+        --angle:360deg;
+    }
+  }
+.container{
+
+
+    padding: 25px 35px;
+    width: 350px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    top: 25%;
+    left: 40%;
+    position: absolute;
+    border-radius: 10px;
+
+  }
+ 
+  .container::after,.conatiner::before{
+    --angle:0deg;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle),transparent 21%,blue,red,pink,yellow);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 2s spin  linear infinite;
+    
+  }
+
+  .container:before{
+
+    filter: blur((1.5rem));
+    opacity: 0.5;
+  }
+
+  .container button{
+
+    width: 40%;
+    height: 45px;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    border-radius:45px;
+    font-weight: 600;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    background-color: #0b57d0;
+    padding: 6px;
+  }
+
+
+
+
+
+
